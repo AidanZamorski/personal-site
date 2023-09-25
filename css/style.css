@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.social-links img {
+    margin: 0 0.5rem;
+    width: 2rem;
+    height: auto;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .social-links img {
+        width: 2rem;
+    }
+}
