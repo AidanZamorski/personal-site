@@ -1,5 +1,9 @@
+:root {
+    --photo-tilt: -1deg; 
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f4f4;
     color: #333;
     display: flex;
@@ -19,9 +23,50 @@ body {
     height: auto;
 }
 
+.image-wrapper {
+    display: inline-block;
+    position: relative;
+    margin: 50px; /* ensure space for the shadow and tape */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    max-width: 40%;
+    transform: rotate(var(--photo-tilt));
+    border: 10px solid #fff;
+}
+
+.image-wrapper img {
+    display: block;
+    max-width: 100%;
+}
+
+.image-wrapper::before, .image-wrapper::after {
+    content: "";
+    height: 7%;
+    width: 18%;
+    position: absolute;
+    background-color: rgba(220, 220, 220, .8);
+}
+
+.image-wrapper::before {
+    top: 0px;
+    left: 0px;
+    transform: translateX(-40%) translateY(-20%) rotate(-45deg);
+}
+
+.image-wrapper::after {
+    bottom: 0px;
+    right: 0px;
+    transform: translateX(40%) translateY(20%) rotate(-45deg);
+}
+
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {
     .social-links img {
         width: 2rem;
     }
+
+    .image-wrapper {
+        max-width: 80%;
+        border: 5px solid #fff;
+    }
 }
+
