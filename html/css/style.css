@@ -1,4 +1,4 @@
-:root {
+:root { /* variable for randomized photo tilt*/
     --photo-tilt: -1deg; 
 }
 
@@ -27,7 +27,6 @@ body {
 .image-wrapper {
     display: inline-block;
     position: relative;
-    margin: 50px; /* ensure space for the shadow and tape */
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     max-width: 40%;
     transform: rotate(var(--photo-tilt));
